@@ -38,6 +38,7 @@ export function HeroSection() {
         sizes="100vw"
         fill
         priority
+        className="object-cover"
       />
 
       <video
