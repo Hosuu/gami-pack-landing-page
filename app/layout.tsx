@@ -1,19 +1,15 @@
 import "./globals.css"
 
 import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils"
-import { Geist_Mono, Inter } from "next/font/google"
+import type { Metadata } from "next"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
-const fontMono = Geist_Mono({ subsets: ["latin"], variable: "--font-mono" })
+export const metadata: Metadata = {
+  title: "Gami-Pack",
+}
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="pl"
-      suppressHydrationWarning
-      className={cn("font-sans antialiased", fontMono.variable, inter.variable)}
-    >
+    <html lang="pl" suppressHydrationWarning className={"antialiased"}>
       <body>
         <ThemeProvider>{children}</ThemeProvider>
       </body>
