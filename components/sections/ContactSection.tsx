@@ -28,7 +28,7 @@ const CONTACT_ITEMS: ContactItem[] = [
   {
     icon: MapPin,
     label: "Adres",
-    value: "ul. Poniatowskiego 2, 41-253 Czeladź",
+    value: "ul. Tadeusza Kościuszki 2, 41-253 Czeladź",
     href: "https://maps.app.goo.gl/4XiGABXZwgrWJZXe6",
     action: "Sprawdź na Google Maps",
     external: true,
