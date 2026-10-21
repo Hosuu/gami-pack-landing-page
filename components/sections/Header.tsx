@@ -33,10 +33,18 @@ export function Header() {
           <Image
             src="/assets/img/logo.svg"
             alt="Logo"
-            width={140}
+            width={210}
             height={40}
             priority
-            className="h-8 w-auto lg:h-10"
+            className="h-8 w-auto lg:h-10 dark:hidden"
+          />
+          <Image
+            src="/assets/img/logo_dark.svg"
+            alt="Logo"
+            width={210}
+            height={40}
+            priority
+            className="hidden h-8 w-auto lg:h-10 dark:block"
           />
         </Link>
 
