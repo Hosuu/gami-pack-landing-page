@@ -67,15 +67,9 @@ export function HeroSection() {
       <div className="absolute inset-0 bg-linear-to-b from-black/45 to-black/65"></div>
 
       <div className="relative z-10 mx-auto max-w-3xl px-5 py-16">
-        <h1 className="text-4xl font-bold tracking-tight text-balance text-white/95 sm:text-5xl lg:text-6xl">
-          Producent opakowań z tektury falistej
+        <h1 className="text-5xl leading-tight font-bold tracking-tight text-balance text-white/95 sm:text-6xl lg:text-7xl">
+          Producent opakowań z&nbsp;tektury falistej
         </h1>
-
-        <p className="mt-6 max-w-2xl text-lg text-pretty text-white/85 sm:text-xl">
-          Tworzymy innowacyjne rozwiązania opakowaniowe, łącząc tradycję
-          <br />z nowoczesnością. Ponad 15 lat doświadczenia w branży
-          kartonowej.
-        </p>
 
         <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
           <Button

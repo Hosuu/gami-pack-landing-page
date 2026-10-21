@@ -9,17 +9,19 @@ export function AboutUsSection() {
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div>
           <h2 className="text-3xl font-bold text-balance text-foreground sm:text-4xl">
-            Łączymy tradycję z nowoczesną technologią
+            Łączymy tradycję z&nbsp;nowoczesną technologią
           </h2>
-          <p className="mt-6 leading-relaxed text-muted-foreground">
-            Gami-Pack to polska firma z ponad 15-letnim doświadczeniem w branży
+          <p className="mt-6 leading-relaxed text-balance text-muted-foreground">
+            Gami-Pack to polska firma z 20-letnim doświadczeniem w&nbsp;branży
             opakowań kartonowych. Lata pracy na rynku pozwalają nam spełniać
-            oczekiwania klientów i realizować nawet najbardziej wymagające
+            oczekiwania klientów i&nbsp;realizować nawet najbardziej wymagające
             zamówienia.
           </p>
-          <p className="mt-4 text-lg leading-relaxed font-medium text-muted-foreground italic">
-            W naszej ofercie znajdują się opakowania z nadrukiem Flexo, Offset,
-            Cyfrowym. Wykonujemy opakowania z tektury 3, 4, 5, 7 warstwowej.{" "}
+          <p className="mt-4 text-lg leading-relaxed font-medium text-balance text-muted-foreground italic">
+            Tworzymy innowacyjne rozwiązania opakowaniowe, łącząc tradycję
+            z&nbsp;nowoczesnością. W&nbsp;naszej ofercie znajdują się opakowania
+            z&nbsp;nadrukiem Flexo, Offset, Cyfrowym. Wykonujemy opakowania
+            z&nbsp;tektury falistej i&nbsp;litej.
             <br />
           </p>
         </div>
