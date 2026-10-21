@@ -1,5 +1,6 @@
 "use client"
 
+import { ThemeToggle } from "@/components/ThemeToggle"
 import { Button } from "@/components/ui/button"
 import {
   Sheet,
@@ -28,7 +29,7 @@ export function Header() {
     <header
       className={`fixed inset-x-0 top-0 z-50 border-b border-border bg-card/85 backdrop-blur-sm`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-6 px-5 lg:px-8">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 lg:gap-6 lg:px-8">
         <Link href="#" className="shrink-0">
           <Image
             src="/assets/img/logo.svg"
@@ -63,61 +64,67 @@ export function Header() {
           </ul>
         </nav>
 
-        <Button
-          render={<Link href="#kontakt" />}
-          nativeButton={false}
-          className="hidden lg:inline-flex"
-        >
-          Zapytaj o ofertę
-        </Button>
+        <div className="flex gap-4">
+          <ThemeToggle />
 
-        {/* Moblie menu */}
-        <Sheet open={open} onOpenChange={setOpen}>
-          <SheetTrigger
-            render={
-              <Button
-                variant="link"
-                size="icon"
-                aria-label="Otwórz menu"
-                className="lg:hidden"
-              />
-            }
+          <Button
+            render={<Link href="#kontakt" />}
+            nativeButton={false}
+            className="hidden lg:inline-flex"
           >
-            <Menu className="size-6" />
-          </SheetTrigger>
+            Zapytaj o ofertę
+          </Button>
 
-          <SheetContent side="right" showCloseButton={false}>
-            <SheetTitle className="sr-only">Menu</SheetTitle>
-            <SheetDescription className="sr-only">
-              Nawigacja po sekcjach strony
-            </SheetDescription>
+          {/* Moblie menu */}
+          <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger
+              render={
+                <Button
+                  variant="outline"
+                  size="icon"
+                  aria-label="Otwórz menu"
+                  className="text-primary lg:hidden"
+                />
+              }
+            >
+              <Menu className="size-6" />
+            </SheetTrigger>
 
-            <nav aria-label="Menu mobilne" className="mt-14 px-6">
-              <ul className="flex flex-col gap-1">
-                {NAV_LINKS.map((link) => (
-                  <li key={link.href}>
-                    <Link
-                      href={link.href}
-                      onClick={() => setOpen(false)}
-                      className="block rounded-md px-3 py-3 text-lg font-medium"
-                    >
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
+            <SheetContent side="right" showCloseButton={false}>
+              <SheetTitle className="sr-only">Menu</SheetTitle>
+              <SheetDescription className="sr-only">
+                Nawigacja po sekcjach strony
+              </SheetDescription>
 
-              <Button
-                render={<Link href="#kontakt" onClick={() => setOpen(false)} />}
-                nativeButton={false}
-                size="lg"
-                className="mt-8 w-full"
-              >
-                Zapytaj o ofertę
-              </Button>
-            </nav>
-          </SheetContent>
-        </Sheet>
+              <nav aria-label="Menu mobilne" className="mt-14 px-6">
+                <ul className="flex flex-col gap-1">
+                  {NAV_LINKS.map((link) => (
+                    <li key={link.href}>
+                      <Link
+                        href={link.href}
+                        onClick={() => setOpen(false)}
+                        className="block rounded-md px-3 py-3 text-lg font-medium"
+                      >
+                        {link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  render={
+                    <Link href="#kontakt" onClick={() => setOpen(false)} />
+                  }
+                  nativeButton={false}
+                  size="lg"
+                  className="mt-8 w-full"
+                >
+                  Zapytaj o ofertę
+                </Button>
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
     </header>
   )
