@@ -21,7 +21,7 @@ const linkClass =
 
 export function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-footer text-primary-foreground">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.7fr_2fr] lg:gap-12">
           {/* Dane firmowe */}

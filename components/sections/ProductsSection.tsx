@@ -120,13 +120,14 @@ export function ProductsSection() {
       </div>
 
       <div className="mt-16 grid items-center gap-12 lg:grid-cols-2">
-        <div className="relative aspect-4/3 overflow-hidden rounded-xl bg-[#fe5d1c]">
+        <div className="relative aspect-4/3 overflow-hidden rounded-xl bg-[#fe5d1c] select-none">
           {PRODUCTS.map((product, i) => (
             <Image
               key={product.id}
               src={product.imageUrl}
               alt={product.id === activeId ? product.label : ""}
               fill
+              draggable={false}
               priority={i === 0}
               sizes="(min-width: 1024px) 560px, 100vw"
               className={cn(

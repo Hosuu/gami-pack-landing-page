@@ -8,7 +8,7 @@ export function AboutUsSection() {
     <SectionWrapper id="o-nas">
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div>
-          <h2 className="text-3xl font-bold text-balance text-foreground sm:text-4xl">
+          <h2 className="text-3xl leading-snug font-bold text-balance text-foreground sm:text-4xl">
             Łączymy tradycję z&nbsp;nowoczesną technologią
           </h2>
           <p className="mt-6 leading-relaxed text-balance text-muted-foreground">
@@ -26,13 +26,14 @@ export function AboutUsSection() {
           </p>
         </div>
 
-        <div className="relative aspect-4/3 overflow-hidden rounded-xl">
+        <div className="relative aspect-4/3 overflow-hidden rounded-xl select-none">
           <Image
             src={"/assets/img/realizacje.jpg"}
             alt="Zakład produkcyjny Gami-Pack"
             sizes="(min-width: 1024px) 560px, 100vw"
             fill
             priority
+            draggable={false}
             className="object-cover"
           />
         </div>

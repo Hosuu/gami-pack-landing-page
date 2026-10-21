@@ -26,9 +26,7 @@ export function Header() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 border-b border-border bg-card/85 backdrop-blur-sm`}
-    >
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-border bg-card/85 backdrop-blur-sm select-none">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 lg:gap-6 lg:px-8">
         <Link href="#" className="shrink-0">
           <Image
@@ -37,6 +35,7 @@ export function Header() {
             width={210}
             height={40}
             priority
+            draggable={false}
             className="h-8 w-auto lg:h-10 dark:hidden"
           />
           <Image
@@ -45,6 +44,7 @@ export function Header() {
             width={210}
             height={40}
             priority
+            draggable={false}
             className="hidden h-8 w-auto lg:h-10 dark:block"
           />
         </Link>

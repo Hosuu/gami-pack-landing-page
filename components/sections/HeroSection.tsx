@@ -38,12 +38,13 @@ export function HeroSection() {
         sizes="100vw"
         fill
         priority
-        className="object-cover"
+        draggable={false}
+        className="object-cover select-none"
       />
 
       <video
         id="hero-video"
-        className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700 data-[playing=true]:opacity-100 motion-reduce:hidden"
+        className="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-700 select-none data-[playing=true]:opacity-100 motion-reduce:hidden"
         autoPlay
         muted
         loop
