@@ -30,7 +30,7 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-4 px-5 lg:gap-6 lg:px-8">
         <Link href="#" className="shrink-0">
           <Image
-            src="/assets/img/logo.svg"
+            src="/assets/img/Gami-Pack_Logo_Full.svg"
             alt="Logo"
             width={210}
             height={40}
@@ -39,7 +39,7 @@ export function Header() {
             className="h-8 w-auto lg:h-10 dark:hidden"
           />
           <Image
-            src="/assets/img/logo_dark.svg"
+            src="/assets/img/Gami-Pack_Logo_Full_light.svg"
             alt="Logo"
             width={210}
             height={40}
