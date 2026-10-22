@@ -32,6 +32,8 @@ export function ScrollToTop({ showTreshold = 64 }: Props) {
       type="button"
       size="icon-lg"
       onClick={scrollToTop}
+      aria-label="Przewiń do góry"
+      aria-hidden={!visible}
       tabIndex={visible ? 0 : -1}
       className={cn(
         "fixed right-5 bottom-5 z-40 size-11 lg:right-8 lg:bottom-8",
