@@ -11,7 +11,7 @@ import {
 import { cn } from "@/lib/utils"
 import { Dialog as DialogPrimitive } from "@base-ui/react/dialog"
 import { Minus, Plus, RotateCcw, X } from "lucide-react"
-import Image from "next/image"
+import Image from "next-image-export-optimizer"
 import { useRef, useState } from "react"
 import {
   TransformComponent,
@@ -120,7 +120,7 @@ export function ZoomableImage({ src, alt, width, height, className }: Props) {
           width={width}
           height={height}
           className="h-auto w-full"
-          sizes="(min-width: 1024px) 400px, 80vw"
+          sizes="384px"
         />
       </DialogTrigger>
 
@@ -156,8 +156,8 @@ export function ZoomableImage({ src, alt, width, height, className }: Props) {
                   alt={alt}
                   width={width}
                   height={height}
-                  sizes="100vw"
-                  priority
+                  unoptimized
+                  placeholder="empty"
                   draggable={false}
                   className="h-auto max-h-svh w-auto max-w-[100vw] select-none"
                 />

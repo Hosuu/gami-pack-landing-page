@@ -10,7 +10,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
-import Image from "next/image"
+import Image from "next-image-export-optimizer"
 import Link from "next/link"
 import { useState } from "react"
 
@@ -39,7 +39,7 @@ export function Header() {
             className="h-8 w-auto lg:h-10 dark:hidden"
           />
           <Image
-            src="/assets/img/Gami-Pack_Logo_Full_light.svg"
+            src="/assets/img/Gami-Pack_Logo_Full_Light.svg"
             alt="Logo"
             width={210}
             height={40}

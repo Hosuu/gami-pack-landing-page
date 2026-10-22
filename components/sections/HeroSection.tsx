@@ -2,7 +2,7 @@
 
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
-import Image from "next/image"
+import Image from "next-image-export-optimizer"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 
@@ -35,9 +35,9 @@ export function HeroSection() {
       <Image
         src={"/assets/img/realizacje.jpg"}
         alt="background-fallback"
-        sizes="100vw"
         fill
-        priority
+        sizes="max(100vw, 198vh)"
+        preload
         draggable={false}
         className="object-cover select-none"
       />

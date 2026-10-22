@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { cn } from "cn"
-import Image from "next/image"
+import Image from "next-image-export-optimizer"
 import { useEffect, useState } from "react"
 
 type Product = {
@@ -86,18 +86,28 @@ const PRODUCTS: Product[] = [
 
 const ROTATE_MS = 2000
 
+const getNextId = (id: string) => {
+  const index = PRODUCTS.findIndex((p) => p.id === id)
+  return PRODUCTS[(index + 1) % PRODUCTS.length].id
+}
+
 export function ProductsSection() {
   const [activeId, setActiveId] = useState(PRODUCTS[0].id)
   const [autoRotate, setAutoRotate] = useState(true)
 
+  // Only images that were shown or are next in line get mounted, so hidden ones are not downloaded upfront
+  const [mountedIds, setMountedIds] = useState(
+    () => new Set([PRODUCTS[0].id, PRODUCTS[1].id])
+  )
+
+  const activate = (id: string) => {
+    setActiveId(id)
+    setMountedIds((prev) => new Set(prev).add(id).add(getNextId(id)))
+  }
+
   useEffect(() => {
     if (!autoRotate) return
-
-    const timeout = setTimeout(() => {
-      const index = PRODUCTS.findIndex((p) => p.id === activeId)
-      setActiveId(PRODUCTS[(index + 1) % PRODUCTS.length].id)
-    }, ROTATE_MS)
-
+    const timeout = setTimeout(() => activate(getNextId(activeId)), ROTATE_MS)
     return () => clearTimeout(timeout)
   }, [autoRotate, activeId])
 
@@ -105,7 +115,7 @@ export function ProductsSection() {
     const next = value[0]
     if (typeof next !== "string") return
     setAutoRotate(false)
-    setActiveId(next)
+    activate(next)
   }
 
   return (
@@ -121,18 +131,19 @@ export function ProductsSection() {
 
       <div className="mt-16 grid items-center gap-12 lg:grid-cols-2">
         <div className="relative aspect-4/3 overflow-hidden rounded-xl bg-[#fe5d1c] select-none">
-          {PRODUCTS.map((product, i) => (
+          {PRODUCTS.filter((p) => mountedIds.has(p.id)).map((product) => (
             <Image
               key={product.id}
               src={product.imageUrl}
               alt={product.id === activeId ? product.label : ""}
               fill
+              sizes="(min-width: 1024px) 584px, calc(100vw-24px)"
               draggable={false}
-              priority={i === 0}
-              sizes="(min-width: 1024px) 560px, 100vw"
               className={cn(
                 `object-cover transition-all duration-500`,
-                product.id === activeId ? "opacity-100" : "opacity-0"
+                product.id === activeId
+                  ? "opacity-100"
+                  : "pointer-events-none opacity-0"
               )}
             />
           ))}

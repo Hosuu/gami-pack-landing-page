@@ -1,7 +1,7 @@
 "use client"
 
 import { SectionWrapper } from "@/components/SectionWrapper"
-import Image from "next/image"
+import Image from "next-image-export-optimizer"
 
 export function AboutUsSection() {
   return (
@@ -30,9 +30,8 @@ export function AboutUsSection() {
           <Image
             src={"/assets/img/realizacje.jpg"}
             alt="Zakład produkcyjny Gami-Pack"
-            sizes="(min-width: 1024px) 560px, 100vw"
             fill
-            priority
+            sizes="(min-width: 1024px) 584px, calc(100vw-24px)"
             draggable={false}
             className="object-cover"
           />
