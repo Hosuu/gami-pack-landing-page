@@ -22,7 +22,7 @@ const linkClass =
 export function Footer() {
   return (
     <footer className="bg-footer text-primary-foreground">
-      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 pt-12 pb-6 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.2fr_0.7fr_2fr] lg:gap-12">
           {/* Dane firmowe */}
           <div>
@@ -104,7 +104,7 @@ export function Footer() {
         </div>
 
         {/* Dolny pasek */}
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-primary-foreground/20 pt-8 text-sm sm:flex-row">
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 border-t border-primary-foreground/20 pt-6 text-sm sm:flex-row">
           <p className="text-primary-foreground/80">
             © {new Date().getFullYear()} Gami-Pack. Wszelkie prawa zastrzeżone.
           </p>
